@@ -1,0 +1,233 @@
+html {
+    /* COLOR VARIABLES [DARK] */
+    --background-second: black;
+    --background-main: #1e1e1e;
+    --text-color: lightgray;
+    --text-color-disabled: rgb(149, 149, 149);
+    --error-red: rgb(165, 0, 0);
+    --button-main: rgb(80, 80, 80);
+    --button-second: rgb(70, 70, 70);
+    --button-select-main: rgb(60, 60, 60);
+    --button-border-main: rgb(100, 100, 100);
+    --button-border-second: rgb(90, 90, 90);
+    --nav-background: rgb(18, 18, 18);
+
+    --text-link: rgb(118, 118, 239);
+    --text-link-hover: rgb(77, 77, 177);
+
+    --color-highlight: #00a8a8;
+    --color-highlight-dark: #ff5757;
+
+    /* Other variables for ease of use */
+    --nav-height: 2rem;
+}
+
+body {
+    padding: 0;
+    margin: 0 auto;
+    height: 100vh;
+
+    font-family: sans-serif;
+    color: var(--text-color);
+    background-color: var(--background-second);
+}
+
+nav {
+    display: flex;
+    background-color: var(--nav-background);
+    height: calc(var(--nav-height) + 1rem - 2px);
+    /*padding: 0.5rem 1rem;*/
+    margin: 0;
+    border-bottom: 2px solid rgb(31, 31, 31);
+    position: sticky;
+}
+
+nav > a h1 {
+    display: flex;
+    font-weight: 700;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    height: calc(var(--nav-height) - 0.5rem);
+    font-size: calc(var(--nav-height) - 0.5rem);
+    position: absolute;
+    right: 0;
+    padding: 0.75rem;
+    background-color: var(--background-main);
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    height: calc(var(--nav-height) + 1rem);
+    width: auto;
+}
+
+nav ul li {
+    height: calc(var(--nav-height) - 0.6rem);
+    background-color: var(--background-main);
+    padding-inline: 0.5rem;
+    padding-block: 0.6rem;
+    margin-block: 0.2rem;
+    font-size: calc(var(--nav-height) - 0.6rem);
+    margin-left: 0.2rem;
+    user-select: none;
+}
+
+nav ul li a:any-link {
+    cursor: pointer;
+}
+
+nav ul li:first-child {
+    height: calc(var(--nav-height));
+    padding-block: 0.3rem;
+    margin-left: 0;
+    margin-block: 0;
+    padding-top: 0.25rem;
+    padding: 0.5rem;
+}
+
+nav ul li h1 {
+    display: flex;
+    font-weight: 700;
+    text-align: center;
+    margin: 0.25rem;
+    padding: 0;
+    height: calc(var(--nav-height) - 0.5rem);
+    font-size: calc(var(--nav-height) - 0.5rem);
+    list-style: symbols();
+}
+
+nav ul li a {
+    display: flex;
+    height: var(--nav-height);
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+section {
+    height: calc(100% - (var(--nav-height) + 1rem));
+    width: calc(70% - 1rem);
+    float: right;
+    overflow-y: auto;
+    padding-left: 1rem;
+}
+
+aside {
+    position: fixed;
+    padding: 1rem;
+    width: calc(30% - 2rem);
+    height: calc(100% - (var(--nav-height) + 2rem));
+    padding-block: 0.5rem;
+    background-color: var(--nav-background);
+    user-select: none;
+}
+
+.ref {
+    font-weight: bold;
+    color: var(--text-link);
+    text-decoration: none;
+}
+
+.ref:hover {
+    text-decoration: underline;
+    color: var(--text-link-hover)
+}
+
+aside ul {
+    list-style: none;
+    padding-left: 0rem;
+}
+
+aside ul li::before {
+    content: "";
+    margin-left: 1rem;
+}
+
+aside ul li {
+    padding-block: 0.25rem;
+}
+
+aside ul li a {
+    font-weight: bold;
+    color: var(--text-color);
+    text-decoration: none;
+    font-family: Consolas;
+}
+
+aside ul li a:hover {
+    text-decoration: underline;
+    color: var(--text-color-disabled)
+}
+
+aside ul li.cur a {
+    color: var(--text-color);
+    border-radius: 0.5rem;
+    padding: 0.1rem;
+    --shaddow-size: 1px;
+    text-shadow: calc(var(--shaddow-size) * -1) calc(var(--shaddow-size) * -1) 0 #000, var(--shaddow-size) calc(var(--shaddow-size) * -1) 0 #000, calc(var(--shaddow-size) * -1) var(--shaddow-size) 0 #000, var(--shaddow-size) var(--shaddow-size) 0 #000;/**/
+    /*text-shadow: calc(var(--shaddow-size)) 0 0 #000, 0 calc(var(--shaddow-size)) 0 #000, calc(var(--shaddow-size) * -1) 0 0 #000, 0 calc(var(--shaddow-size) * -1) 0 #000;/**/
+}
+
+aside ul li.cur a:hover {
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+aside ul li.cur {
+    background-color: var(--button-select-main);
+    margin-left: 0.75rem;
+    padding-left: 0.5rem;
+    background-image: linear-gradient(to right, var(--button-main), var(--nav-background), var(--nav-background));
+    border-radius: 0.5rem;
+}
+
+aside ul li.cur::before {
+    content: none;
+}
+
+.index ul {
+    list-style: none;
+    padding: 0;
+}
+
+.index .indx {
+    min-width: 7rem;
+}
+
+.index ul li {
+    padding-left: 20px;
+}
+
+text-disabled {
+    color: var(--text-color-disabled)
+}
+
+b {
+    color: var(--color-highlight-dark);
+}
+
+.on_hover {
+    display: none;
+    width: 10rem;
+    pointer-events: none;
+}
+
+.hover {
+    display: inline;
+}
+
+.hover:hover .on_hover {
+    display:block;
+    position: absolute;
+    background-color: var(--background-main);
+    color: var(--text-color);
+    border: 1px solid var(--button-border-main);
+    padding: 0.5rem;
+    /*margin-top: 1.5rem;
+    margin-left: -0.5rem;*/
+    z-index: 10;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}

@@ -1,0 +1,13 @@
+<page path="style.css"/>
+<page path="index.html"/>
+<page path="reef.html"/>
+<page path="tourism.html"/>
+<page path="refrences.html"/>
+<page path="reef/">
+  <page path="what.html" desc="What is the great barrier reef"/>
+  <page path="lanscape.html"/>
+</page>
+<page path="tourism/">
+  <page path="impacts.html" desc="Impacts of tourism"/>
+  <page path="why.html" desc="Why visit the great barrier reef"/>
+</page>

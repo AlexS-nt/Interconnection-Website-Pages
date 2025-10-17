@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Tourism - Great Barrier Reef</title>
+        <link rel="stylesheet" href="/style.css">
+        <link rel="icon" sizes="any" type="image/png" href="/favicon.png">
+        <script>
+            class HostTag extends HTMLElement {
+                constructor() {
+                    super();
+                }
+
+                connectedCallback() {
+                    this.innerText = location.host;
+                }
+            }
+            customElements.define('host-name', HostTag);
+        </script>
+    </head>
+    <body>
+        <nav>
+            <ul>
+                <li><a href="/"><h1>Great Barrier Reef</h1></a></li>
+            </ul>
+        </nav>
+        <aside>
+            <ul>
+                <li>
+                    
+                </li>
+            </ul>
+        </aside>
+        <section>
+            <h1>This is a testing page</h1>
+            <h3>i was testing if this was possible, and it is, which is cool</h3>
+            <h3>Explanation</h3>
+            <p>naming a file "index.html" (see <a href="/" class="ref"><host-name/>/</a> and <a href="/index.html" class="ref"><host-name/>/index.html</a>)</p>
+            <p>here is the same example but in a sub url</p>
+            <a href="/tourism/" class="ref"><host-name/>/tourism/</a>
+            <a href="/tourism/index.html" class="ref"><host-name/>/tourism/index.html</a>
+        </section>
+    </body>
+</html>

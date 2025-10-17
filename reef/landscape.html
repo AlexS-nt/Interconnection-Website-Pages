@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Landscape - Great Barrier Reef</title>
+        <link rel="stylesheet" href="/style.css">
+        <link rel="icon" sizes="any" type="image/png" href="/favicon.png">
+    </head>
+    <body>
+        <nav>
+            <ul>
+                <li><a href="/"><h1>Great Barrier Reef</h1></a></li>
+                <li><a href="/reef.html">The Reef</a></li>
+                <li>Landscape</li>
+            </ul>
+            <a href="/refrences.html" class="ref"><h1>Refrences</h1></a>
+        </nav>
+        <aside>
+            <h3>Great Barrier Reef</h3>
+            <ul>
+            <h3 style="margin:0;">Main Pages</h3>
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="/reef.html">The Reef</a></li>
+                <li><a href="/tourism.html">Tourism</a></li>
+            <h3 style="margin-bottom: 0;">Home</h3>
+                <li><a href="/reef/what.html">What is it</a></li>
+                <li class="cur"><a>Landscape</a></li>
+            <h3 style="margin-bottom: 0;">Other</h3>
+                <li><a href="/refrences.html">Refrences</a></li>
+            </ul>
+        </aside>
+        <section>
+            <ul style="list-style: none; padding: 0;" class="index">
+                <li>Location
+                    <ul>
+                        <li>The <b>Great Barrier Reef</b> is located on the <b>Coast of Queensland</b></li>
+                    </ul></li>
+                <li>Size
+                    <ul>
+                        <li>The <b>Great Barrier Reef</b> spans over <b>~2,300km<!-- ref www.australia.com--></b> down Australias eastern coastline</li>
+                    </ul></li>
+                <li>Climate
+                    <ul>
+                        <li>The <b>Great Barrier Reef</b> <!--is in a aquatic 
+                            climate<!--duh, it's a CORAL reef, what other climate would it have?-->
+                        has a Tropical climate, with warm temperatures
+                    </li>
+                    </ul></li>
+                <li>features
+                    <ul>
+                        <li>Most features of the <b>Great Barrier Reef</b> are natural, features, here are some<ul>
+                            <li>- Coral Cays<sup class="hover">?<div class="on_hover">A Coral Cay is a small sandy island that forms on top of a coral reef</div></sup></li>
+                            <li>- Sandy Islands</li>
+                            <li>- Lagoons</li>
+                            <li>- Mangrove Forests</li>
+                        </ul></li>
+                    </ul></li>
+            </ul>
+        </section>
+        <script>
+            let hoverElements = document.getElementsByClassName("hover");
+            for (let i = 0; i < hoverElements.length; i++) {
+                let hoverElement = hoverElements[i];
+                let onHoverElement = hoverElement.getElementsByClassName("on_hover")[0];
+                hoverElement.addEventListener("mouseover", function(e) {
+                    onHoverElement = e.srcElement.getElementsByClassName("on_hover")[0];
+                    onHoverElement.style.top = e.clientY + "px";
+                    onHoverElement.style.left = e.clientX + "px";
+                });
+            }
+        </script>
+    </body>
+</html>
